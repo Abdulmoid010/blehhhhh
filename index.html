@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bleh</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial;
+        color: white;
+    }
+
+    #btn {
+        padding: 25px 45px;
+        border: 3px solid #fff;
+        border-radius: 14px;
+        font-size: 30px;
+        letter-spacing: 2px;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: 0.2s;
+    }
+
+    #btn:active {
+        transform: scale(0.93);
+    }
+
+    /* Bottom credit text */
+    #credit {
+        position: fixed;
+        bottom: 12px;
+        width: 100%;
+        text-align: center;
+        color: #777;
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-family: Arial;
+    }
+</style>
+</head>
+<body>
+
+<audio id="sound" src="bleh.mp3" preload="auto" playsinline></audio>
+
+<button id="btn" onclick="playBleh(event)">TAP ME!!!!!!</button>
+
+<!-- CREDIT TEXT AT BOTTOM -->
+<div id="credit">Made by Moid</div>
+
+<script>
+function playBleh(e) {
+    const audio = document.getElementById("sound");
+
+    audio.volume = 1.0;
+    audio.currentTime = 0;
+
+    audio.play().catch(err => {
+        console.log("Play blocked:", err);
+    });
+}
+</script>
+
+</body>
+</html>
